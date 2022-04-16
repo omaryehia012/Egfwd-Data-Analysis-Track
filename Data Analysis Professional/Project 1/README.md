@@ -62,6 +62,6 @@ The Files To answer these questions using Python, you will need to write a Pytho
 
 The Interactive Experience
 
-![image]: (https://en.wikipedia.org/wiki/Divvy#/media/File:Bike_to_Work_Day_Rally.jpg)
+
 
 
