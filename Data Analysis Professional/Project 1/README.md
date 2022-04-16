@@ -1,5 +1,8 @@
 # Bikes-data-analysis
 
+![image](https://user-images.githubusercontent.com/93586279/163667461-c29d58a4-1088-4935-b071-e8f360b073a4.png)
+
+
 project 1 - Explore Bike Share Data - Udacity Data Analysis Professional Degree
 
 Bike Share Data Over the past decade, bicycle-sharing systems have been growing in number and popularity in cities across the world. Bicycle-sharing systems allow users to rent bicycles on a very short-term basis for a price. This allows people to borrow a bike from point A and return it at point B, though they can also return it to the same location if they'd like to just go for a ride. Regardless, each bike can serve several users per day.
