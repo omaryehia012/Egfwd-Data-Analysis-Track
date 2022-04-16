@@ -1,0 +1,60 @@
+<Q1> What are countries which have the most music listeners?
+
+SELECT c.Country, COUNT(c.CustomerId)
+FROM Customer c
+JOIN Invoice i
+ON c.CustomerId=i.CustomerId
+JOIN InvoiceLine il
+ON il.InvoiceId=i.InvoiceId
+JOIN Track t
+ON t.TrackId= il.TrackId
+JOIN Genre g
+ON g.GenreId=t.GenreId
+GROUP BY c.Country
+ORDER BY COUNT(c.CustomerId) DESC;
+
+
+<Q2> What is the Annual revenue for each year?
+
+SELECT strftime('%Y', InvoiceDate) as year,  SUM(InvoiceLine.UnitPrice) as Revenue
+FROM Invoice
+join InvoiceLine
+On Invoice.InvoiceId = InvoiceLine.InvoiceId
+GROUP BY 1
+ORDER BY 2 DESC;
+
+<Q3> Which is the Highest Artists Revenue? 
+
+SELECT Artist.Name, SUM(InvoiceLine.UnitPrice) as SUM_OF_UnitPrice
+from InvoiceLine
+JOIN Track ON Track.TrackId = InvoiceLine.TrackId
+JOIN Album ON Album.AlbumId = Track.AlbumId
+JOIN Artist ON Artist.ArtistId = Album.ArtistId
+GROUP BY Artist.Name
+ORDER BY SUM_OF_UnitPrice desc
+limit 10;
+
+
+
+
+
+<Q4> What is the most  lovely / popular type of music?
+
+SELECT Genre.name , Count(Genre.Name) AS Popular_Genre
+FROM Customer
+join Invoice
+ON Customer.customerId = Invoice.CustomerId
+JOIN InvoiceLine
+On Invoice.InvoiceId = InvoiceLine.InvoiceId
+Join Track
+ON InvoiceLine.TrackId=Track.TrackId
+Join Genre
+On track.GenreId= Genre.GenreId
+Group by Genre.name
+ORDER BY Popular_Genre DESC
+LIMIT 10;
+
+
+
+
+
